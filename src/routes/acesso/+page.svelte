@@ -7,7 +7,7 @@
 </script>
 
 <svelte:head>
-  <title>Salvia-kit Dashboard v3 with Svelte-kit</title>
+  <title>Salvador FC Portal</title>
 </svelte:head>
 <!-- <Content title="Google"/> -->
 

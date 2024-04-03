@@ -1,9 +1,6 @@
 <script lang="ts">
     import type { PageData } from './$types';
     import MyCustomTable from "$lib/components/MyCustomTable.svelte";    
-    import { mediaQuery } from "svelte-legos";
-      import { onMount } from 'svelte';
-    import ControlBar from '$lib/components/ControlBar.svelte';
     import * as Card from "$lib/components/ui/card/index";
     export let data: PageData;
   

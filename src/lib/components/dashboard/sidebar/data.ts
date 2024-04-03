@@ -7,7 +7,7 @@ export const data = [
 	{
 		title: 'Dashboard',
 		icon: HomeIcon,
-		link: '/'
+		link: '/acesso'
 	},
 	{
 		title: 'Jogadores',
@@ -17,12 +17,12 @@ export const data = [
 	{
 		title: 'Times',
 		icon: TasksIcon,
-		link: '/admin/tasks'
+		link: '/acesso/times'
 	},
 	{
 		title: 'Calendario',
 		icon: CalendarIcon,
-		link: '/admin/calendar'
+		link: '/acesso/calendario'
 	},
 	// {
 	// 	title: 'Time manage',
