@@ -55,13 +55,15 @@
 				</div>
 			</div>
 			<div class="flex items-center justify-end ml-5 p-1 relative w-1/4 sm:mr-0 sm:right-auto">
-				<span class="block relative">
-					<img
-						alt="Jonathan Ilunga"
-						src="/images/9.jpg"
-						class="h-10 mx-auto object-cover rounded-full w-10"
-					/>
-				</span>
+				<a href="/acesso/perfil">
+					<span class="block relative">
+						<img
+							alt="Jonathan Ilunga"
+							src="/images/9.jpg"
+							class="h-10 mx-auto object-cover rounded-full w-10"
+						/>
+					</span>
+				</a>
 			</div>
 		</div>
 	</div>

@@ -6,7 +6,7 @@
   export let options;
   export let chartLabel: string;
   export let chartLabels;
-  export let dataset: string[];
+  export let dataset: any[];
 
   let chart: Chart<"doughnut", number[], string>;
   let ctx: HTMLCanvasElement;

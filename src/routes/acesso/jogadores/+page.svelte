@@ -4,13 +4,13 @@
     import * as Card from "$lib/components/ui/card/index";
     export let data: PageData;
   
-    const clientes = data.clientes;
+    // const clientes = data.clientes;
     let p: { nomeFantasia: any; razaoSocial: any; cnpj: any; };
   </script>
   
   
-  <div class="sticky top-0 bg-white z-1">
-    <h1 class="font-bold my-8 text-4xl font-mono text-left mx-12">Relação de Jogadores</h1>
+  <div class="sticky top-0">
+    <h1 class="font-bold my-4 text-2xl font-mono text-left mx-12">Relação de Jogadores</h1>
     <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-4 mx-12 my-4">
       <Card.Root>
         <Card.Header
@@ -68,10 +68,10 @@
   
   
   <!-- component -->
-  <div class="overflow-hidden flex-grid min-w-full px-10 border-indigo-400 mt-4 justify-center">
+  <div class="overflow-hidden flex-grid min-w-full border-indigo-400 mt-4 justify-center">
     <!-- Your scrolling component goes here -->
     <!-- Assuming this is where your scrolling component goes -->
-    <MyCustomTable bind:cliente2={p} {clientes}></MyCustomTable>
+    <MyCustomTable bind:cliente2={p}></MyCustomTable>
   </div>
   
   

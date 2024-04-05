@@ -1,4 +1,5 @@
 <script lang="ts">
+	import ControlBar from '$lib/components/ControlBar.svelte';
 	import PieChart from '$lib/components/PieChart.svelte';
     import type { PageData } from './$types';
     
@@ -41,12 +42,14 @@
 
 </script>
 
-<p>Times</p>
+<h1 class="font-bold my-4 text-2xl font-mono text-left mx-12">Times</h1>
 
-<div class="w-screen flex border-2 border-indigo-400 gap-2">
+<ControlBar/>
+
+<!-- <div class="w-screen flex border-2 border-indigo-400 gap-2">
     <PieChart {options} title={"Idade dos Jogadores"} chartLabel={"idade_jogadores"} {chartLabels} {dataset}/>
     <PieChart options={options} title={"Posições"} chartLabel={"posicoes"} chartLabels={chartLabels2} dataset={dataset2}/>
-</div>
+</div> -->
 
 
 
