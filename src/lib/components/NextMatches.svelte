@@ -37,7 +37,7 @@
   </script>
   
   <!-- Svelte component markup -->
-  <div class="w-full sm:w-1/2 xl:w-fit">
+  <div class="w-full sm:w-1/2 xl:w-full h-full">
     <div class="mb-4">
       <div class="shadow-lg rounded-2xl p-4 bg-white w-full">
         <p class="font-bold text-md text-black">Proximos Jogos</p>

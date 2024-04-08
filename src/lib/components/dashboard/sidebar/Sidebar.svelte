@@ -11,7 +11,7 @@
 		container: `pb-32 lg:pb-6`,
 		close: `hidden lg:block lg:w-64 lg:z-auto`,
 		open: `w-8/12 absolute z-40 sm:w-5/12 lg:hidden`,
-		default: `bg-white h-screen overflow-y-auto top-0 lg:relative`
+		default: `bg-white h-screen overflow-y-auto top-0 lg:relative shadow-xl`
 	};
 
 	export let mobileOrientation = 'end';

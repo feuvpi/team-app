@@ -1,9 +1,10 @@
 <script lang="ts">
 	import NextMatches from '$lib/components/NextMatches.svelte';
 	export let title: string;
-
+	import { Calendar } from "$lib/components/ui/calendar/index.js";
+	import { getLocalTimeZone, today } from '@internationalized/date';
 	
-
+	let value = today(getLocalTimeZone());
 </script>
 
 <svelte:head>
@@ -58,6 +59,8 @@
         </div>
       </section>
 
-	<NextMatches/>
+	  <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-6 mb-4 lg:w-full mx-2">	<NextMatches/>
+	<Calendar bind:value class="rounded-md border shadow bg-orange-100" /></div>
+
 
 </div>

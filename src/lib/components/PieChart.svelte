@@ -58,14 +58,14 @@
   }
 </script>
 
-<div class="shadow-lg rounded-lg ">
-<div class="py-3 px-5 bg-gray-50 text-center">{title}</div>
+<div class="shadow-lg rounded-lg border-r-4 border-orange-300 bg-white">
+<div class="py-3 px-5 bg-gray-50 text-center font-mono font-bold bg-white">{title}</div>
 <canvas id={canvasId}></canvas>
 </div>
 
 <style>
 canvas {
-  width: 100%;
+  width: 80%;
   height: auto;
 }
 </style>

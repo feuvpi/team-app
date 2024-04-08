@@ -1,3 +1,4 @@
-<div class="bg-white flex items-center justify-center pt-6 sticky top-0 pb-6 z-10">
-	<img src="/salvadorfc1.png" alt="" class="w-20 h-20">
-</div>
+<header>
+	<img class="w-24 h-24 mx-auto mb-5 mt-4 transform hover:scale-110 transition duration-300" src="/salvadorfc1.png"/>
+
+  </header>  
