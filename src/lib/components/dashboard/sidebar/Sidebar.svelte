@@ -19,12 +19,14 @@
 
 <aside
 	class={`${style.default} ${style.mobileOrientation[mobileOrientation]}
-       ${$sidebarOpen ? style.open : style.close} scrollbar`}
+       ${$sidebarOpen ? style.open : style.close} scrollbar  flex flex-col`}
 >
-	<div class={style.container}>
-		<SidebarHeader />
-		<SidebarItems />
-	</div>
+<div class={`${style.container} flex-grow`}>
+    <SidebarHeader />
+    <SidebarItems />
+  </div>
+<p class="mt-auto">teste</p>
+
 </aside>
 
 <style>

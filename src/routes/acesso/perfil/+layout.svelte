@@ -7,11 +7,11 @@
 	const sidebarNavItems = [
 		{
 			title: "Profile",
-			href: "/examples/forms",
+			href: "/acesso/perfil",
 		},
 		{
 			title: "Account",
-			href: "/examples/forms/account",
+			href: "/acesso/perfil/account",
 		},
 		{
 			title: "Appearance",
@@ -34,9 +34,9 @@
 </div>
 <div class="hidden space-y-6 p-10 pb-16 md:block">
 	<div class="space-y-0.5">
-		<h2 class="text-2xl font-bold tracking-tight">Settings</h2>
+		<h2 class="text-2xl font-bold tracking-tight">Preferencias</h2>
 		<p class="text-muted-foreground">
-			Manage your account settings and set e-mail preferences.
+			Gerencie sua conta e configure suas preferencias
 		</p>
 	</div>
 	<Separator class="my-6" />

@@ -16,16 +16,12 @@
 
 <script lang="ts">
 	import { type Infer, type SuperValidated, superForm } from "sveltekit-superforms";
-	import SuperDebug from "sveltekit-superforms";
 	import { zodClient } from "sveltekit-superforms/adapters";
 	import { tick } from "svelte";
 	import * as Form from "$lib/components/ui/form/index";
 	import * as Select from "$lib/components/ui/select/index";
 	import { Input } from "$lib/components/ui/input/index";
-	import { Button } from "$lib/components/ui/button/index";
-	import { Textarea } from "$lib/components/ui/textarea/index";
-	import { cn } from "$lib/utils.js";
-	import { browser } from "$app/environment";
+
 
 	export let data: SuperValidated<Infer<ProfileFormSchema>>;
 
@@ -51,81 +47,66 @@
 		label: $formData.email,
 		value: $formData.email,
 	};
+
+	$: selectedRole = {
+		label:"Admin",
+		value: "Admin",
+	};
 </script>
 
 <form method="POST" class="space-y-8" use:enhance id="profile-form">
 	<Form.Field {form} name="username">
 		<Form.Control let:attrs>
-			<Form.Label>Username</Form.Label>
-			<Input placeholder="@shadcn" {...attrs} bind:value={$formData.username} />
+			<Form.Label>Nome</Form.Label>
+			<Input placeholder="Seu Nome" {...attrs} bind:value={$formData.username} />
 		</Form.Control>
-		<Form.Description>
+		<!-- <Form.Description>
 			This is your public display name. It can be your real name or a pseudonym. You can only
 			change this once every 30 days.
-		</Form.Description>
+		</Form.Description> -->
 		<Form.FieldErrors />
 	</Form.Field>
 
 	<Form.Field {form} name="email">
 		<Form.Control let:attrs>
-			<Form.Label>Email</Form.Label>
+			<Form.Label>E-mail</Form.Label>
+			<Input placeholder="Endereço de e-mail" {...attrs} bind:value={$formData.username} />
+		</Form.Control>
+		<Form.FieldErrors />
+	</Form.Field>
+
+
+	<Form.Field {form} name="bio">
+		<Form.Control let:attrs>
+			<Form.Label>Perfil de Usúario</Form.Label>
 			<Select.Root
-				selected={selectedEmail}
+				selected={selectedRole}
+				disabled={true}
 				onSelectedChange={(s) => {
 					s && ($formData.email = s.value);
 				}}
 			>
 				<Select.Trigger {...attrs}>
-					<Select.Value placeholder="Select a verified email to display" />
+					<Select.Value placeholder="Escolha um perfil de usuario" />
 				</Select.Trigger>
 				<Select.Content>
-					<Select.Item value="m@example.com" label="m@example.com" />
-					<Select.Item value="m@google.com" label="m@google.com" />
-					<Select.Item value="m@support.com" label="m@supporte.com" />
+					<Select.Item value="admin" label="Administrador" />
+					<Select.Item value="dirigente" label="Dirigente" />
+					<Select.Item value="tecnico" label="Técnico" />
+					<Select.Item value="comissao" label="Comissão" />
 				</Select.Content>
 			</Select.Root>
 			<input hidden name={attrs.name} bind:value={$formData.email} />
 		</Form.Control>
-		<Form.Description>
-			You can manage verified email addresses in your <a href="/examples/forms"
-				>email settings</a
-			>.
-		</Form.Description>
-		<Form.FieldErrors />
-	</Form.Field>
-	<Form.Field {form} name="bio">
-		<Form.Control let:attrs>
-			<Form.Label>Bio</Form.Label>
-			<Textarea {...attrs} bind:value={$formData.bio} />
-		</Form.Control>
-		<Form.Description>
+		<!-- <Form.Description>
 			You can <span>@mention</span> other users and organizations to link to them.
-		</Form.Description>
+		</Form.Description> -->
 		<Form.FieldErrors />
 	</Form.Field>
-	<div>
-		<Form.Fieldset {form} name="urls">
-			<Form.Legend>URLs</Form.Legend>
-			{#each $formData.urls as _, i}
-				<Form.ElementField {form} name="urls[{i}]">
-					<Form.Description class={cn(i !== 0 && "sr-only")}>
-						Add links to your website, blog, or social media profiles.
-					</Form.Description>
-					<Form.Control let:attrs>
-						<Input {...attrs} bind:value={$formData.urls[i]} />
-					</Form.Control>
-					<Form.FieldErrors />
-				</Form.ElementField>
-			{/each}
-		</Form.Fieldset>
-		<Button type="button" variant="outline" size="sm" class="mt-2" on:click={addUrl}>
-			Add URL
-		</Button>
-	</div>
 
-	<Form.Button>Update profile</Form.Button>
+	<Form.Button>Atualizar</Form.Button>
 </form>
 
-{#if browser}
+<!-- {#if browser}
 	<SuperDebug data={$formData} />
-{/if}
+{/if} -->
