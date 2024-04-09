@@ -61,10 +61,6 @@ export const flyAndScale = (
 	};
 };
 
-<<<<<<< HEAD
 export const serializeNonPOJOs = (obj: unknown) => {
-=======
-export const serializeNonPOJOs = (obj) => {
->>>>>>> 757551fa544af194bdfec11bc1081b5f5dc7ff56
 	return structuredClone(obj);
 };

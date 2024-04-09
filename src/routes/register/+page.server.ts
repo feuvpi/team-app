@@ -6,12 +6,23 @@ import {redirect} from '@sveltejs/kit'
 import { SECRET_SIGNATURE } from '$env/static/private'
 import crypto from "crypto";
 
+// export async function POST({ request, locals }) {
+//     const { email, password } = await request.json();
+
+//     const { token, record } = await locals.pb.collection('users').authWithPassword(email, password);
+
+//     return new Response('Success...');
+// }
+
 export const actions = {
     register: async ({ request, locals }) => {
-        const form = await request.formData();
-        const name = form.get('name')?? '';
-        const email = form.get('email')?? '';
-        const password = form.get('password')?? '';
+        const { name, email, password } = await request.json();
+        // const form = await request.formData();
+        // const name = form.get('name')?? '';
+        // const email = form.get('email')?? '';
+        // const password = form.get('password')?? '';
+
+        if(!name || name == '' || !email || email == '' || !password || password == '') return false;
 
         const hash = crypto.createHash('sha256');
         hash.update(password as BinaryType);
