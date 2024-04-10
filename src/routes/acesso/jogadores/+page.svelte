@@ -19,6 +19,17 @@
     { value: "ataque", label: "Atacante" }
   ];
 
+  let playersData = {
+  totalplayers: 15000,
+  sub20: 45,
+  sub20date: new Date(new Date().getFullYear() - 20, new Date().getMonth(), new Date().getDate()).toLocaleDateString('en-GB'),
+  sub17: 20,
+  sub17date: new Date(new Date().getFullYear() - 17, new Date().getMonth(), new Date().getDate()).toLocaleDateString('en-GB'),
+  sub15: 12,
+  sub15date: new Date(new Date().getFullYear() - 15, new Date().getMonth(), new Date().getDate()).toLocaleDateString('en-GB'),
+  sub12: 9,
+  sub12date: new Date(new Date().getFullYear() - 12, new Date().getMonth(), new Date().getDate()).toLocaleDateString('en-GB')
+};
 
   let players = [
     {
@@ -61,55 +72,64 @@
   
   <div class="md:sticky top-0">
     <h1 class="font-bold my-4 text-2xl font-mono text-left">Relação de Jogadores</h1>
-    <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-4 my-4">
-      <Card.Root class="transform hover:scale-105 transition duration-300 shadow-md">
-        <Card.Header
-          class="flex flex-row items-center justify-between space-y-0 pb-2"
-        >
-          <Card.Title class="text-sm font-medium">Clientes Totais</Card.Title>
-          <!-- <DollarSign class="h-4 w-4 text-muted-foreground" /> -->
-        </Card.Header>
-        <Card.Content>
-          <div class="text-2xl font-bold">$45,231.89</div>
-          <p class="text-xs text-muted-foreground">+20.1% from last month</p>
-        </Card.Content>
-      </Card.Root >
-      <Card.Root class="transform hover:scale-105 transition duration-300 shadow-md">
-        <Card.Header
-          class="flex flex-row items-center justify-between space-y-0 pb-2"
-        >
-          <Card.Title class="text-sm font-medium">Clientes Ativos</Card.Title>
-          <!-- <Users class="h-4 w-4 text-muted-foreground" /> -->
-        </Card.Header>
-        <Card.Content>
-          <div class="text-2xl font-bold">+2350</div>
-          <p class="text-xs text-muted-foreground">+180.1% from last month</p>
-        </Card.Content>
-      </Card.Root>
-      <Card.Root class="transform hover:scale-105 transition duration-300 shadow-md">
-        <Card.Header
-          class="flex flex-row items-center justify-between space-y-0 pb-2"
-        >
-          <Card.Title class="text-sm font-medium">Licenças Ativas</Card.Title>
-          <!-- <CreditCard class="h-4 w-4 text-muted-foreground" /> -->
-        </Card.Header>
-        <Card.Content>
-          <div class="text-2xl font-bold">+12,234</div>
-          <p class="text-xs text-muted-foreground">+19% from last month</p>
-        </Card.Content>
-      </Card.Root>
-      <Card.Root class="transform hover:scale-105 transition duration-300 shadow-md">
-        <Card.Header
-          class="flex flex-row items-center justify-between space-y-0 pb-2"
-        >
-          <Card.Title class="text-sm font-medium">Numero de Cooperados</Card.Title>
-          <!-- <Activity class="h-4 w-4 text-muted-foreground" /> -->
-        </Card.Header>
-        <Card.Content>
-          <div class="text-2xl font-bold">+573</div>
-          <p class="text-xs text-muted-foreground">+201 since last hour</p>
-        </Card.Content>
-      </Card.Root>
+    <div class="md:sticky top-0">
+      <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-4 my-4">
+        {#if playersData.totalplayers}
+          <Card.Root class="bg-gradient-to-r from-orange-400 to-orange-200 transform hover:scale-105 transition duration-300 shadow-md">
+            <Card.Header class="flex flex-row items-center justify-between space-y-0 pb-2">
+              <Card.Title class="text-xl italic font-thin text-orange-800 font-medium">JOGADORES TOTAIS</Card.Title>
+            </Card.Header>
+            <Card.Content>
+              <div class="text-2xl font-bold">{playersData.totalplayers}</div>
+            </Card.Content>
+          </Card.Root>
+        {/if}
+        {#if playersData.sub20}
+        <Card.Root class="bg-gradient-to-r from-orange-300 to-orange-200 transform hover:scale-105 transition duration-300 shadow-md">
+          <Card.Header class="flex flex-row items-center justify-between space-y-0 pb-2">
+            <Card.Title class="text-xl italic font-thin text-range-800 font-medium">SUB-20</Card.Title>
+            <!-- Display the date 20 years from now -->
+            <div class="text-2xl text-muted-foreground"><span class="text-sm">Nascidos  em </span>{playersData.sub20date}</div>
+          </Card.Header>
+          <Card.Content>
+            <!-- Display the player count -->
+            <div class="text-2xl font-bold">{playersData.sub20}</div>
+          </Card.Content>
+        </Card.Root>
+      {/if}
+        {#if playersData.sub17}
+          <Card.Root class="bg-gradient-to-r from-orange-200 to-orange-100 transform hover:scale-105 transition duration-300 shadow-md">
+            <Card.Header class="flex flex-row items-center justify-between space-y-0 pb-2">
+              <Card.Title class="text-xl font-thin italic font-medium">SUB-17</Card.Title>
+              <div class="text-2xl text-muted-foreground"><span class="text-sm">Nascidos  em </span>{playersData.sub17date}</div>
+            </Card.Header>
+            <Card.Content>
+              <div class="text-2xl font-bold">{playersData.sub17}</div>
+            </Card.Content>
+          </Card.Root>
+        {/if}
+        {#if playersData.sub15}
+          <Card.Root class="bg-gradient-to-r from-orange-100 to-white transform hover:scale-105 transition duration-300 shadow-md">
+            <Card.Header class="flex flex-row items-center justify-between space-y-0 pb-2">
+              <Card.Title class="text-xl font-medium italic">SUB-15</Card.Title>
+              <div class="text-2xl text-muted-foreground"><span class="text-sm">Nascidos  em </span>{playersData.sub15date}</div>
+            </Card.Header>
+            <Card.Content>
+              <div class="text-2xl font-bold">{playersData.sub15}</div>
+            </Card.Content>
+          </Card.Root>
+        {/if}
+        <!-- {#if playersData.sub12}
+          <Card.Root class="transform hover:scale-105 transition duration-300 shadow-md">
+            <Card.Header class="flex flex-row items-center justify-between space-y-0 pb-2">
+              <Card.Title class="text-sm font-medium">Players Under 12</Card.Title>
+            </Card.Header>
+            <Card.Content>
+              <div class="text-2xl font-bold">{playersData.sub12}</div>
+            </Card.Content>
+          </Card.Root>
+        {/if} -->
+      </div>
     </div>
   </div>
   
