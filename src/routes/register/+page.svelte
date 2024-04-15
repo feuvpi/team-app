@@ -62,7 +62,7 @@
                                 type="password" placeholder="Senha" />
                                 <input
                                 class=" w-full px-8 py-4 rounded-lg border-2 hover:border-orange-200 focus:border-orange-400 font-medium bg-gray-100 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5"
-                                type="password" placeholder="Confirme a Senha" />
+                                type="passwordConfirm" placeholder="Confirme a Senha" />
                             <button
                                 class="mt-5 tracking-wide font-semibold bg-orange-400 text-white-500 w-full py-4 rounded-lg hover:bg-green-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
                                 <svg class="w-6 h-6 -ml-2" fill="none" stroke="currentColor" stroke-width="2"
