@@ -5,6 +5,7 @@
 	import * as Select from '$lib/components/ui/select';
 	import * as Table from '$lib/components/ui/table';
 	import Button from '$lib/components/ui/button/button.svelte';
+	import * as Sheet from '$lib/components/ui/sheet';
     export let data: PageData;
   
     // const clientes = data.clientes;
@@ -71,7 +72,7 @@
   
   
   <div class="md:sticky top-0">
-    <h1 class="font-bold my-4 text-2xl font-mono text-left">Relação de Jogadores</h1>
+    <h1 class="font-bold text-2xl font-mono text-left">Relação de Jogadores</h1>
     <div class="md:sticky top-0">
       <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-4 my-4">
         {#if playersData.totalplayers}
@@ -153,7 +154,17 @@
       </Select.Content>
       <Select.Input name="favoriteFruit" />
     </Select.Root>
-    <Button size="sm" class="bg-orange-400">Adicionar</Button>
+    <Sheet.Root >
+      <Sheet.Trigger><Button>Adicionar</Button></Sheet.Trigger>
+      <Sheet.Content class="bg-gradient-to-r from-orange-400 to-orange-200">
+        <Sheet.Header>
+          <Sheet.Title>Adicionar Time / Form</Sheet.Title>
+          <Sheet.Description>
+            Implementar campos para adicionar uma divisão no banco de dados.
+          </Sheet.Description>
+        </Sheet.Header>
+      </Sheet.Content>
+    </Sheet.Root>
   </div>
   
   

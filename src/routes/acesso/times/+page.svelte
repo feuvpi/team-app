@@ -4,8 +4,7 @@
 	import { Button } from '$lib/components/ui/button';
   import type { PageData } from './$types';
 	import * as Select from "$lib/components/ui/select/index";
-	import { Calendar } from "$lib/components/ui/calendar";
-	import PieChart from "$lib/components/PieChart.svelte";
+  import * as Sheet from "$lib/components/ui/sheet";
     
     export let data: PageData;
 
@@ -82,7 +81,17 @@ const fruits = [
           </Select.Content>
           <Select.Input name="favoriteFruit" />
         </Select.Root>
-        <Button class="bg-orange-400 hover:bg-orange-200" size="sm">ADICIONAR</Button>
+        <Sheet.Root >
+          <Sheet.Trigger><Button>Adicionar</Button></Sheet.Trigger>
+          <Sheet.Content class="bg-gradient-to-r from-orange-400 to-orange-200">
+            <Sheet.Header>
+              <Sheet.Title>Adicionar Time / Form</Sheet.Title>
+              <Sheet.Description>
+                Implementar campos para adicionar uma divisão no banco de dados.
+              </Sheet.Description>
+            </Sheet.Header>
+          </Sheet.Content>
+        </Sheet.Root>
 
       </div>
 

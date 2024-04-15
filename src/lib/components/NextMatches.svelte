@@ -38,8 +38,8 @@
   
   <!-- Svelte component markup -->
   <div class="w-full sm:w-1/2 xl:w-full h-full">
-    <div class="mb-4">
-      <div class="shadow-lg rounded-2xl p-4 bg-white w-full">
+    <div class="h-full">
+      <div class="shadow-lg rounded-2xl p-4 bg-white w-full h-full">
         <p class="font-bold text-md text-black">Proximos Jogos</p>
         <ul>
           {#each displayNextMatches() as { opponent, data, location, home }}
@@ -57,7 +57,7 @@
                 <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z"/></svg>
               </div>
               {/if}
-              <div class="flex flex-col">
+              <div class="flex flex-col flex-grow">
                 <span class="text-sm text-gray-900 font-semibold ml-2">{opponent}</span>
                 <span class="text-sm text-gray-400 ml-2">{data} - {location}</span>
               </div>
