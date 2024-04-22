@@ -1,5 +1,19 @@
 <script>
+	import Button from '../ui/button/button.svelte';
+	import Logout from './sidebar/icons/Logout.svelte';
+	import Profile from './sidebar/icons/Profile.svelte';
+	// import { createEventDispatcher } from "svelte";
 	import { toggleSidebar } from './store';
+	import { createEventDispatcher } from 'svelte';
+
+	const dispatcher = createEventDispatcher();
+
+	function handleLogoutClick() {
+        // @ts-ignore
+		console.log("entrei")
+		// event.logout = true;
+        dispatcher("logout", true);
+    };
 </script>
 
 <header class="bg-white h-16 items-center relative shadow w-full z-10 md:h-20 lg:rounded-2xl lg:mx-2">
@@ -54,16 +68,26 @@
 					</div>
 				</div>
 			</div>
-			<div class="flex items-center justify-end ml-5 p-1 relative w-1/4 sm:mr-0 sm:right-auto">
-				<a href="/acesso/perfil">
-					<span class="block relative">
-						<img
-							alt="Jonathan Ilunga"
-							src="/images/9.jpg"
-							class="h-10 mx-auto object-cover rounded-full w-10"
-						/>
-					</span>
+
+			<div class="gap-4 flex items-center justify-end ml-5 p-1 relative w-1/4 sm:mr-0 sm:right-auto">
+
+
+					<Button on:click={handleLogoutClick} class="block relative rounded-md hover:shadow-md bg-orange-300 hover:bg-orange-400" >
+						<Logout/>
+					</Button>
+
+
+				<!-- <a href="/acesso/perfil">
+					<d class="block relative rounded-md hover:shadow-md" >
+						<Profile/>
+					</d>
 				</a>
+
+
+					<span class="block relative rounded-md hover:shadow-md">
+	<Logout/>
+					</span> -->
+
 			</div>
 		</div>
 	</div>

@@ -5,6 +5,8 @@
   import type { PageData } from './$types';
 	import * as Select from "$lib/components/ui/select/index";
   import * as Sheet from "$lib/components/ui/sheet";
+	import { Card } from "$lib/components/ui/card";
+	import { ColorWheel } from "svelte-radix";
     
     export let data: PageData;
 
@@ -111,6 +113,16 @@ const fruits = [
    
     </div>
     
+    <Card
+    classes={['cursor-pointer decoration-none']}
+    tiltDegree={1}
+    href={`#`}
+    bgImg='/salvadorfc1.png'
+    color=Color.Gray;
+  >
+    <p class="text-[var(--tertiary-text)]">"Teste"</p>
+  </Card>
+
     <ul class="grid grid-cols-1 xl:grid-cols-3 gap-y-10 gap-x-6 items-start p-8">
     <li class="relative flex flex-col sm:flex-row xl:flex-col items-start">
         <div class="order-1 sm:ml-6 xl:ml-0">

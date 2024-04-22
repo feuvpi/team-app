@@ -13,6 +13,8 @@ function isPathAllowed(path: string){
 export async function handle({ event, resolve }) {
     event.locals.pb = new PocketBase('http://127.0.0.1:8090');
 
+    console.log(event)
+
     // load the store data from the request cookie string
     event.locals.pb.authStore.loadFromCookie(event.request.headers.get('cookie') || '');
 

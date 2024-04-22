@@ -10,7 +10,7 @@
             <img class="w-28 h-28 mx-auto mb-5 transform hover:scale-110 transition duration-300" src="/salvadorfc1.png"/>
 
           </header>   
-          <form method="POST">
+          <form method="POST" action="?/login">
             <div >
               <label class="block mb-2 text-orange-500" for="username">E-mail</label>
               <input class=" hover:border-orange-500 focus:border-orange-700 font-medium bg-gray-100 placeholder-gray-500 text-sm focus:outline-none w-full p-2 mb-6 text-orange-700 border-b-2 border-orange-300 outline-none" type="text" name="email">
