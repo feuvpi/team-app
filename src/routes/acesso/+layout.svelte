@@ -3,16 +3,10 @@
 	import 'tailwindcss/tailwind.css';
 	import { page } from '$app/stores';
 	import { browser } from '$app/environment';
-
-	import TopBar from '$lib/components/dashboard/TopBar.svelte';
 	import Overlay from '$lib/components/dashboard/Overlay.svelte';
 	import Sidebar from '$lib/components/dashboard/sidebar/Sidebar.svelte';
 	import { sidebarOpen, closeSidebar } from '$lib/components/dashboard/store';
-
-	import Button from '$lib/components/ui/button/button.svelte';
 	import Logout from '$lib/components/dashboard/sidebar/icons/Logout.svelte';
-	import Profile from '$lib/components/dashboard/sidebar/icons/Profile.svelte';
-	// import { createEventDispatcher } from "svelte";
 	import { toggleSidebar } from '$lib/components/dashboard/store';
 	import { createEventDispatcher } from 'svelte';
 
@@ -70,13 +64,13 @@
 									type="button"
 									aria-expanded="false"
 									aria-label="Toggle sidenav"
-									class="text-4xl text-gray-500 focus:outline-none"
+									class="h-12 w-12 text-4xl align-middle text-center outline-1 text-gray-500 focus:outline-none"
 									on:click={toggleSidebar}
 								>
 									&#8801;
 								</button>
 							</div>
-							<div class="flex group h-full items-center relative w-36 lg:w-64">
+							<div class="ml-2 flex group h-full items-center relative w-42 lg:w-96">
 								<div
 									class="absolute block cursor-pointer flex h-10 items-center justify-center p-3 pr-2 text-gray-500 text-sm uppercase w-auto sm:hidden"
 								>
@@ -105,7 +99,7 @@
 								</svg>
 								<input
 									type="text"
-									class="bg-gray-100 block leading-normal pl-10 py-1.5 pr-4 ring-opacity-90 rounded-2xl text-gray-400 w-full focus:border-transparent focus:outline-none focus:ring-2 focus:ring-orange-500"
+									class="bg-gray-100 block leading-normal pl-10 py-1.5 pr-4 ring-opacity-90 rounded-2xl text-gray-400 md:w-full focus:border-transparent focus:outline-none focus:ring-2 focus:ring-orange-500"
 									placeholder="Procurar"
 								/>
 								<div
@@ -119,13 +113,12 @@
 						<div
 							class="gap-4 flex items-center justify-end ml-5 p-1 relative w-1/4 sm:mr-0 sm:right-auto"
 						>
-							<form method="POST" action=".?/logout">
-								<Button
-									on:click={handleLogoutClick}
-									class="block relative rounded-md hover:shadow-md bg-orange-300 hover:bg-orange-400"
+							<form method="POST" action="/acesso/logout">
+								<button
+									class="h-10 w-10 flex text-center justify-center align-middle place-items-center rounded-md hover:shadow-md bg-orange-300 hover:bg-orange-400"
 								>
 									<Logout />
-								</Button>
+								</button>
 							</form>
 
 							<!-- <a href="/acesso/perfil">

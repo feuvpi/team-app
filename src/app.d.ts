@@ -4,7 +4,8 @@ import PocketBase from 'pocketbase';
 declare global {
 	namespace App {
 		interface Locals {
-            pb: PocketBase
+            pb: PocketBase,
+			currentUser: pb.authStore.model
         }
 		// interface Error {}
 		// interface Locals {}

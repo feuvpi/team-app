@@ -11,12 +11,12 @@ function isPathAllowed(path: string){
 
 /** @type {import('@sveltejs/kit').Handle} */
 export async function handle({ event, resolve }) {
-    event.locals.pb = new PocketBase('http://127.0.0.1:8090');
 
-    console.log(event)
-
-    // load the store data from the request cookie string
-    event.locals.pb.authStore.loadFromCookie(event.request.headers.get('cookie') || '');
+    if(event.locals.pb == null){
+        event.locals.pb = new PocketBase('http://127.0.0.1:8090');
+        event.locals.pb.authStore.loadFromCookie(event.request.headers.get('cookie') || '');
+    }
+    
 
         if(event.locals.pb.authStore.isValid && await event.locals.pb.collection('users').authRefresh()){
             if(isPathAllowed(event.url.pathname)) throw redirect(303, '/acesso')

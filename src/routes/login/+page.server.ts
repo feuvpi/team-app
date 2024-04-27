@@ -4,17 +4,19 @@ import type { PageServerLoad, Actions } from './$types';
 
 export const actions = {
     default: async ({ request, locals }) => {
-        console.log("entrei")
         const { email, password } = await request.json();
-        console.log('email: '+email);
         if(!email || email == '' || !password || password == '') return false;
-        // const form = await request.formData();
-        // const name = form.get('name')?? '';
-        // const email = form.get('email')?? '';
-        // const password = form.get('password')?? '';
-
         const { token, record } = await locals.pb.collection('users').authWithPassword(email, password);
-        throw redirect(303, '/acesso')
+        
+        if(token){
+            locals.currentUser = locals.pb.authStore.model;
+            throw redirect(303, '/acesso')
+        } else {
+            console.log("entrei aquu login errado")
+            return {
+                fail: true}
+        }
+
         // return new Response('Success...');
     }
 } satisfies Actions;

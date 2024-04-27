@@ -5,7 +5,7 @@
 </script>
 
 <div class="bg-slate-100 flex h-screen">
-    <div class="w-full max-w-xs m-auto rounded bg-orange-100 p-5">   
+    <div class="w-full max-w-xs m-auto rounded bg-white p-5 border-2 border-tl-orange-400 border-tr-orange-400 border-bl-orange-400 border-br-orange-400">   
           <header>
             <img class="w-28 h-28 mx-auto mb-5 transform hover:scale-110 transition duration-300" src="/salvadorfc1.png"/>
 

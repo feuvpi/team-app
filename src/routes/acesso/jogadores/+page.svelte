@@ -6,6 +6,7 @@
 	import * as Table from '$lib/components/ui/table';
 	import Button from '$lib/components/ui/button/button.svelte';
 	import * as Sheet from '$lib/components/ui/sheet';
+  import FilterBar from '$lib/components/FilterBar.svelte';
     export let data: PageData;
   
     // const clientes = data.clientes;
@@ -134,38 +135,9 @@
     </div>
   </div>
   
-
+<FilterBar/>
   
-  <div class="flex items-center justify-between space-x-2 mt-4">
-    <!-- Add your selector here -->
-    <Select.Root>
-      <Select.Trigger class="w-[180px]">
-        <Select.Value placeholder="Select a fruit" />
-      </Select.Trigger>
-      <Select.Content>
-        <Select.Group>
-          <Select.Label>Fruits</Select.Label>
-          {#each posicoes as fruit}
-            <Select.Item value={fruit.value} label={fruit.label}
-              >{fruit.label}</Select.Item
-            >
-          {/each}
-        </Select.Group>
-      </Select.Content>
-      <Select.Input name="favoriteFruit" />
-    </Select.Root>
-    <Sheet.Root >
-      <Sheet.Trigger><Button>Adicionar</Button></Sheet.Trigger>
-      <Sheet.Content class="bg-gradient-to-r from-orange-400 to-orange-200">
-        <Sheet.Header>
-          <Sheet.Title>Adicionar Time / Form</Sheet.Title>
-          <Sheet.Description>
-            Implementar campos para adicionar uma divisão no banco de dados.
-          </Sheet.Description>
-        </Sheet.Header>
-      </Sheet.Content>
-    </Sheet.Root>
-  </div>
+
   
   
   <Table.Root class="border-t-8 border-orange-300 mt-4 shadow-md bg-white">
