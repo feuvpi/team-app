@@ -16,7 +16,7 @@
       $: razaoSocial = cliente ? cliente.razaoSocial : "";
       $: cnpj = cliente ? cliente.cnpj : "";
   
-      $: title = cliente ? "Editar Cliente" : "Adicionar Cliente";
+      $: title = cliente ? "Editar Jogador" : "Adicionar Jogador";
       $: btnTitle = cliente ? "Editar" : "Adicionar";
     
       let checked = false;
@@ -25,9 +25,9 @@
   {#if $isDesktop}
     <Dialog.Root bind:open>
       <Dialog.Trigger asChild let:builder>
-        <Button variant="outline" builders={[builder]}>{btnTitle}</Button>
+        <Button  variant="outline" builders={[builder]}>{btnTitle}</Button>
       </Dialog.Trigger>
-      <Dialog.Content class="sm:max-w-[425px]">
+      <Dialog.Content class="sm:max-w-[600px] border-2 border-orange-300">
         <Dialog.Header>
           <Dialog.Title>{title}</Dialog.Title>
           <!-- <Dialog.Description>
@@ -35,12 +35,35 @@
           </Dialog.Description> -->
         </Dialog.Header>
         <form method="POST" class="grid items-start gap-4">
-          <div class="grid gap-2">
-            <Label for="Nome">Nome Fantasia</Label>
-            <Input class=" bg-slate-100" name="nomeFantasia" type="text" id="Nome" value={nomeFantasia} />
+          <div class="flex gap-2">
+            <div class="grid gap-2 w-3/5">
+              <Label for="Nome">Nome</Label>
+              <Input class="bg-slate-100 w-full border-2 border-orange-200" name="nomeFantasia" type="text" id="Nome" value={nomeFantasia} />
+            </div>
+            <div class="grid gap-2">
+              <Label for="Nome">Sobrenome</Label>
+              <Input class="bg-slate-100 w-full" name="nomeFantasia" type="text" id="Nome" value={nomeFantasia} />
+            </div>
           </div>
+
+          <div class="flex gap-2">
+            <div class="grid gap-2 w-2/5">
+              <Label for="Nome">Ano de Nascimento</Label>
+              <Input class="bg-slate-100 w-full border-2 border-orange-200" name="nomeFantasia" type="text" id="Nome" value={nomeFantasia} />
+            </div>
+            <div class="grid gap-2 w-full">
+              <Label for="Nome">Sobrenome</Label>
+              <Input class="bg-slate-100 w-full" name="nomeFantasia" type="text" id="Nome" value={nomeFantasia} />
+            </div>
+
+            <div class="grid gap-2 w-2/3">
+              <Label for="Nome">Sobrenome</Label>
+              <Input class="bg-slate-100 w-full" name="nomeFantasia" type="text" id="Nome" value={nomeFantasia} />
+            </div>
+          </div>
+
           <div class="grid gap-2">
-            <Label for="razao">Razão Social</Label>
+            <Label for="razao"></Label>
             <Input name="razaoSocial" id="razao" value={razaoSocial} />
           </div>
           <div class="grid gap-2">
@@ -60,14 +83,14 @@
             Ativo
           </Label>
           </div>
-          <Button type="submit" class=" bg-teal-400 hover:bg-teal-500">Salvar</Button>
+          <Button type="submit" class=" bg-orange-400 hover:bg-orange-500">Salvar</Button>
         </form>
       </Dialog.Content>
     </Dialog.Root>
   {:else}
     <Drawer.Root bind:open>
       <Drawer.Trigger asChild let:builder>
-        <Button variant="outline" builders={[builder]}>{btnTitle}</Button>
+        <Button class="w-full sticky top-0 bg-orange-300 mt-2 shadow-sm text-white hover:bg-orange-400" variant="outline" builders={[builder]}>{btnTitle}</Button>
       </Drawer.Trigger>
       <Drawer.Content>
         <Drawer.Header class="text-left">

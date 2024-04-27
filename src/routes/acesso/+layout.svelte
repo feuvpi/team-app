@@ -9,6 +9,9 @@
 	import Logout from '$lib/components/dashboard/sidebar/icons/Logout.svelte';
 	import { toggleSidebar } from '$lib/components/dashboard/store';
 	import { createEventDispatcher } from 'svelte';
+	import { Button } from '$lib/components/ui/button';
+	import { Moon, Sun } from 'svelte-radix';
+	import { toggleMode } from "mode-watcher";
 
 	const dispatcher = createEventDispatcher();
 
@@ -26,7 +29,7 @@
 		open: 'lg:w-full',
 		close: 'lg:pl-4 lg:w-[calc(100%-16rem)]',
 		mainContainer: `flex flex-col w-full h-screen pl-0 lg:space-y-4`,
-		container: `bg-gray-100 h-screen overflow-hidden relative lg:p-4`,
+		container: `bg-background dark:bg-background h-screen overflow-hidden relative lg:p-4`,
 		main: `h-screen overflow-auto pb-36 pt-4 px-2 md:pb-8 md:pt-4 lg:pt-0`
 	};
 
@@ -110,15 +113,34 @@
 							</div>
 						</div>
 
+		
+				
+
 						<div
 							class="gap-4 flex items-center justify-end ml-5 p-1 relative w-1/4 sm:mr-0 sm:right-auto"
 						>
+
+						<Button on:click={toggleMode} class="w-12 h-12 flex text-center justify-center align-middle rounded-full" variant="outline" size="icon">
+							<Sun
+							  class="w-8 h-8 scale-100 transition-all dark:-rotate-90 dark:scale-0 text-black"
+							/>
+							<Moon
+							  class="w-8 h-8 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
+							/>
+							<span class="sr-only text-black">Toggle theme</span>
+						  </Button>
+					
+
+					
 							<form method="POST" action="/acesso/logout">
 								<button
 									class="h-10 w-10 flex text-center justify-center align-middle place-items-center rounded-md hover:shadow-md bg-orange-300 hover:bg-orange-400"
 								>
 									<Logout />
 								</button>
+			
+
+								
 							</form>
 
 							<!-- <a href="/acesso/perfil">

@@ -7,7 +7,9 @@
 	import Button from '$lib/components/ui/button/button.svelte';
 	import * as Sheet from '$lib/components/ui/sheet';
   import FilterBar from '$lib/components/FilterBar.svelte';
+  import { players } from '$lib/players';
     export let data: PageData;
+    
   
     // const clientes = data.clientes;
     let p: { nomeFantasia: any; razaoSocial: any; cnpj: any; };
@@ -32,49 +34,12 @@
   sub12: 9,
   sub12date: new Date(new Date().getFullYear() - 12, new Date().getMonth(), new Date().getDate()).toLocaleDateString('en-GB')
 };
-
-  let players = [
-    {
-      id: "SFC003",
-      name: "Lionel Messi",
-      dob: "24 de Junho, 1987",
-      height: "5'7\"",
-      weight: "78 Kg",
-      goals: 643,
-      position: "Atacante",
-      dominance: "Direito",
-      foot: "Esquerdo"
-    },
-    {
-      id: "SFC002",
-      name: "Cristiano Ronaldo",
-      dob: "5 de Fevereiro, 1985",
-      height: "1,87",
-      weight: "85 Kg",
-      goals: 719,
-      position: "Atacante",
-      dominance: "Esquerdo",
-      foot: "Direito"
-    },
-    {
-      id: "SFC001",
-      name: "Neymar Jr",
-      dob: "5 de Fevereiro, 1992",
-      height: "1,72",
-      weight: "70 Kg",
-      goals: 283,
-      position: "Atacante",
-      dominance: "Esquerdo",
-      foot: "Direito"
-    }
-    // Add more player data as needed
-  ];
-  </script>
+</script>
   
   
-  <div class="md:sticky top-0">
+  <div class="">
     <h1 class="font-bold text-2xl font-mono text-left">Relação de Jogadores</h1>
-    <div class="md:sticky top-0">
+    <div class="">
       <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-4 my-4">
         {#if playersData.totalplayers}
           <Card.Root class="bg-gradient-to-r from-orange-400 to-orange-200 transform hover:scale-105 transition duration-300 shadow-md">
@@ -121,21 +86,11 @@
             </Card.Content>
           </Card.Root>
         {/if}
-        <!-- {#if playersData.sub12}
-          <Card.Root class="transform hover:scale-105 transition duration-300 shadow-md">
-            <Card.Header class="flex flex-row items-center justify-between space-y-0 pb-2">
-              <Card.Title class="text-sm font-medium">Players Under 12</Card.Title>
-            </Card.Header>
-            <Card.Content>
-              <div class="text-2xl font-bold">{playersData.sub12}</div>
-            </Card.Content>
-          </Card.Root>
-        {/if} -->
       </div>
     </div>
   </div>
   
-<FilterBar/>
+<FilterBar class="sticky top-0 z-10 bg-white shadow-md"/>
   
 
   
