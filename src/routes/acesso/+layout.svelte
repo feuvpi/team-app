@@ -29,7 +29,7 @@
 		open: 'lg:w-full',
 		close: 'lg:pl-4 lg:w-[calc(100%-16rem)]',
 		mainContainer: `flex flex-col w-full h-screen pl-0 lg:space-y-4`,
-		container: `bg-background dark:bg-background h-screen overflow-hidden relative lg:p-4`,
+		container: `dark:bg-neutral-800 dark:bg-background h-screen overflow-hidden relative lg:p-4 dark:bg-card dark:text-card-foreground`,
 		main: `h-screen overflow-auto pb-36 pt-4 px-2 md:pb-8 md:pt-4 lg:pt-0`
 	};
 
@@ -57,7 +57,7 @@
 		<div class={`${style.mainContainer} ${$sidebarOpen ? style.open : style.close}`}>
 			<!-- <TopBar on:logout={handleLogout}/> -->
 			<header
-				class="bg-white h-16 items-center relative shadow w-full z-10 md:h-20 lg:rounded-2xl lg:mx-2"
+				class="bg-white dark:bg-neutral-800 dark:border-2 border-double dark:border-orange-400 dark:bg-neutral-700 h-16 items-center relative shadow w-full z-10 md:h-20 lg:rounded-2xl lg:mx-2"
 			>
 				<div class="flex flex-center flex-col h-full justify-center mx-auto px-3 relative">
 					<div class="flex items-center pl-1 relative w-full sm:pr-2 sm:ml-0 lg:max-w-68">

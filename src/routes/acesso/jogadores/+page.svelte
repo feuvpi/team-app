@@ -38,7 +38,7 @@
   
   
   <div class="">
-    <h1 class="font-bold text-2xl font-mono text-left">Relação de Jogadores</h1>
+    <h1 class="font-bold text-2xl font-mono text-left dark:text-orange-500">Relação de Jogadores</h1>
     <div class="">
       <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-4 my-4">
         {#if playersData.totalplayers}
@@ -95,10 +95,10 @@
 
   
   
-  <Table.Root class="border-t-8 border-orange-300 mt-4 shadow-md bg-white">
+  <Table.Root class="border-t-8 border-orange-300 mt-4 shadow-md dark:bg-neutral-700 bg-white">
     <Table.Caption>Uma lista de todos os jogadores.</Table.Caption>
     <Table.Header>
-      <Table.Row>
+      <Table.Row class="dark:text-orange-500">
         <Table.Head class="w-[100px]">ID</Table.Head>
         <Table.Head>Nome</Table.Head>
         <Table.Head>Data de Nascimento</Table.Head>

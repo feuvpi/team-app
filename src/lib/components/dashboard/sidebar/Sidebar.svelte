@@ -13,7 +13,7 @@
 		container: `pb-32 lg:pb-6`,
 		close: `hidden lg:block lg:w-64 lg:z-auto`,
 		open: `w-8/12 absolute z-40 sm:w-5/12 lg:hidden`,
-		default: `bg-white h-screen overflow-y-auto top-0 lg:relative shadow-xl`
+		default: `dark:bg-neutral-700  p-2 rounded-md bg-white h-screen mb-8 overflow-y-auto top-0 lg:relative shadow-xl`
 	};
 
 	export let mobileOrientation = 'end';
@@ -32,7 +32,7 @@
 
   
 <div class="border-orange-600 text-center text-xs text-gray-400 absolute bottom-10 left-0 right-0">
-	<a href="/acesso/perfil">	<Button class="bg-white border-2 border-orange-400 shadow-md mb-4 text-black hover:bg-slate-100"><Gear/></Button></a>
+	<a href="/acesso/perfil">	<Button class="bg-white dark:hover:bg-neutral-700  dark:bg-neutral-900 border-2 border-orange-400 shadow-md mb-4 text-black hover:bg-slate-100"><Gear/></Button></a>
 
 	<p class="italic font-xs">Versão 0.10.0</p>
   </div> 

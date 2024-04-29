@@ -16,7 +16,7 @@
     };
 </script>
 
-<header class="bg-white h-16 items-center relative shadow w-full z-10 md:h-20 lg:rounded-2xl lg:mx-2">
+<header class="bg-white dark:bg-neutral-800 dark:border-2 dark:border-orange-500 h-16 items-center relative shadow w-full z-10 md:h-20 lg:rounded-2xl lg:mx-2">
 	<div class="flex flex-center flex-col h-full justify-center mx-auto px-3 relative">
 		<div class="flex items-center pl-1 relative w-full sm:pr-2 sm:ml-0 lg:max-w-68">
 			<div class="flex h-full left-0 relative w-3/4">

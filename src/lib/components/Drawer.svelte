@@ -25,7 +25,7 @@
   {#if $isDesktop}
     <Dialog.Root bind:open>
       <Dialog.Trigger asChild let:builder>
-        <Button  variant="outline" builders={[builder]}>{btnTitle}</Button>
+        <Button  variant="outline" class="dark:border-orange-400 dark:text-orange-400 dark:bg-neutral-500" builders={[builder]}>{btnTitle}</Button>
       </Dialog.Trigger>
       <Dialog.Content class="sm:max-w-[600px] border-2 border-orange-300">
         <Dialog.Header>
