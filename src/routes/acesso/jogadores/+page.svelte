@@ -98,7 +98,7 @@
   <Table.Root class="border-t-8 border-orange-300 mt-4 shadow-md dark:bg-neutral-700 bg-white">
     <Table.Caption>Uma lista de todos os jogadores.</Table.Caption>
     <Table.Header>
-      <Table.Row class="dark:text-orange-500">
+      <Table.Row>
         <Table.Head class="w-[100px]">ID</Table.Head>
         <Table.Head>Nome</Table.Head>
         <Table.Head>Data de Nascimento</Table.Head>

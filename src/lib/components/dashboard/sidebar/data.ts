@@ -2,7 +2,8 @@ import HomeIcon from './icons/HomeIcon.svelte';
 import TasksIcon from './icons/TasksIcon.svelte';
 import CalendarIcon from './icons/CalendarIcon.svelte';
 import ProjectsIcon from './icons/ProjectsIcon.svelte';
-
+import Chalkboard from './icons/Chalkboard.svelte';
+import File from './icons/File.svelte';
 export const data = [
 	{
 		title: 'Dashboard',
@@ -23,6 +24,16 @@ export const data = [
 		title: 'Calendario',
 		icon: CalendarIcon,
 		link: '/acesso/calendario'
+	},
+	{
+		title: 'Contratos',
+		icon: File,
+		link: '/acesso/contratos'
+	},
+	{
+		title: 'Board',
+		icon: Chalkboard,
+		link: '/acesso/board'
 	},
 	// {
 	// 	title: 'Time manage',

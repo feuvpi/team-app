@@ -4,6 +4,20 @@ import type { PageServerLoad, Actions } from './$types';
 import PocketBase from 'pocketbase';
 
 
+async function isServerUp(): Promise<boolean>{
+    try{
+        const response = await fetch(`http://127.0.0.1:8090/api/health`);
+        if(response)
+            return true;
+        else
+            return false;
+    } catch(error){
+        // console.log(error)
+    }
+    return false;
+}
+
+
 export const actions = {
     login: async ({ request, locals }) => {
         console.log("entrei")
@@ -14,8 +28,13 @@ export const actions = {
         if(!email || email == '' || !password || password == '') return false;
 
         if(locals.pb == null){
-            locals.pb = new PocketBase('http://127.0.0.1:8090');
-            locals.pb.authStore.loadFromCookie(request.headers.get('cookie') || '');
+            try{
+                locals.pb = new PocketBase('http://127.0.0.1:8090');
+                locals.pb.authStore.loadFromCookie(request.headers.get('cookie') || '');
+            } catch (error){
+                console.log(error)
+            }
+
         }
 
 
@@ -34,5 +53,9 @@ export const actions = {
 } satisfies Actions;
 
 export const load = (async () => {
+    const uptime = await isServerUp();
+    if(!uptime){
+        console.log("server down")
+        throw redirect(303, '/server-down')}
     return {};
 }) satisfies PageServerLoad;

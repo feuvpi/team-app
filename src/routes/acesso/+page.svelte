@@ -61,13 +61,7 @@
 
 <div class="sticky top-0 z-1">
   <h1 class="font-bold my-2 text-2xl font- text-left mx-2">Visão Geral</h1>
-
-
 </div>
-
-
-
-
 
 <div class="flex flex-col flex-wrap sm:flex-row border-2">
 <PlayerCards/>
