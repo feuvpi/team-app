@@ -41,7 +41,7 @@
 		"@excalidraw/excalidraw": "^0.17.6",
 		"@internationalized/date": "^3.5.2",
 		"bcrypt": "^5.1.1",
-		"bits-ui": "^0.21.3",
+		"bits-ui": "^0.21.6",
 		"chart.js": "^4.4.2",
 		"clsx": "^2.1.0",
 		"cmdk-sv": "^0.0.17",

@@ -16,7 +16,7 @@
     };
 </script>
 
-<header class="bg-white dark:bg-neutral-800 dark:border-2 dark:border-orange-500 h-16 items-center relative shadow w-full z-10 md:h-20 lg:rounded-2xl lg:mx-2">
+<header class="bg-white dark:bg-neutral-600 dark:border-2 dark:border-orange-500 h-16 items-center relative shadow w-full z-10 md:h-20 lg:rounded-2xl lg:mx-2">
 	<div class="flex flex-center flex-col h-full justify-center mx-auto px-3 relative">
 		<div class="flex items-center pl-1 relative w-full sm:pr-2 sm:ml-0 lg:max-w-68">
 			<div class="flex h-full left-0 relative w-3/4">
@@ -58,7 +58,7 @@
 					</svg>
 					<input
 						type="text"
-						class="bg-gray-100 block leading-normal pl-10 py-1.5 pr-4 ring-opacity-90 rounded-2xl text-gray-400 w-full focus:border-transparent focus:outline-none focus:ring-2 focus:ring-orange-500"
+						class="bg-orange-600 dark:bg-orange-400 block leading-normal pl-10 py-1.5 pr-4 ring-opacity-90 rounded-2xl text-gray-400 w-full focus:border-transparent focus:outline-none focus:ring-2 focus:ring-orange-500"
 						placeholder="Procurar"
 					/>
 					<div

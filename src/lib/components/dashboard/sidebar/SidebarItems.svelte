@@ -16,7 +16,7 @@
 				href={item.link}
 				class={`${style.link} ${item.link === $page.url.pathname && style.active}`}
 			>
-				<span><svelte:component this={item.icon} /></span>
+				<span class="bg-orange-400 w-6 flex justify-center h-6 align-middle text-center rounded-lg"><svelte:component this={item.icon} /></span>
 				<span class={style.title}>{item.title}</span>
 			</a>
 		{/each}

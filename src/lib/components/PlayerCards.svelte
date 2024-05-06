@@ -63,50 +63,50 @@
   ];
   </script>
 
-<div class="grid gap-4 md:grid-cols-2 lg:grid-cols-4 my-4 z-1 border-2 w-full">
-    {#if playersData.totalplayers}
-      <Card.Root class="bg-gradient-to-r from-orange-400 to-orange-200 transform hover:scale-105 transition duration-300 shadow-md z-1">
-        <Card.Header class="flex flex-row items-center justify-between space-y-0 pb-2">
-          <Card.Title class="text-xl italic font-thin text-orange-800 font-medium">JOGADORES TOTAIS</Card.Title>
-        </Card.Header>
-        <Card.Content>
-          <div class="text-2xl font-bold bg-orange-600 w-fit rounded-full">{playersData.totalplayers}</div>
-        </Card.Content>
-      </Card.Root>
-    {/if}
-    {#if playersData.sub20}
-    <Card.Root class="bg-gradient-to-r from-orange-300 to-orange-200 transform hover:scale-105 transition duration-300 shadow-md">
+<div class="grid gap-4 md:grid-cols-2 lg:grid-cols-4 my-4 w-full">
+  {#if playersData.totalplayers}
+    <Card.Root class="bg-gradient-to-r border-b-orange-500 border-b-4 dark:bg-neutral-700 dark:border-orange-400 transform hover:scale-105 transition duration-300 shadow-md">
       <Card.Header class="flex flex-row items-center justify-between space-y-0 pb-2">
-        <Card.Title class="text-xl italic font-thin text-range-800 font-medium">SUB-20</Card.Title>
-        <!-- Display the date 20 years from now -->
-        <div class="text-2xl text-muted-foreground"><span class="text-sm">Nascidos  em </span>{playersData.sub20date}</div>
+        <Card.Title class="text-xl italic font-thin text-orange-800 font-medium">JOGADORES TOTAIS</Card.Title>
       </Card.Header>
       <Card.Content>
-        <!-- Display the player count -->
-        <div class="text-2xl font-bold">{playersData.sub20}</div>
+        <div class="text-2xl font-bold">{playersData.totalplayers}</div>
       </Card.Content>
     </Card.Root>
   {/if}
-    {#if playersData.sub17}
-      <Card.Root class="bg-gradient-to-r from-orange-200 to-orange-100 transform hover:scale-105 transition duration-300 shadow-md">
-        <Card.Header class="flex flex-row items-center justify-between space-y-0 pb-2">
-          <Card.Title class="text-xl font-thin italic font-medium">SUB-17</Card.Title>
-          <div class="text-2xl text-muted-foreground"><span class="text-sm">Nascidos  em </span>{playersData.sub17date}</div>
-        </Card.Header>
-        <Card.Content>
-          <div class="text-2xl font-bold">{playersData.sub17}</div>
-        </Card.Content>
-      </Card.Root>
-    {/if}
-    {#if playersData.sub15}
-      <Card.Root class="bg-gradient-to-r from-orange-100 to-white transform hover:scale-105 transition duration-300 shadow-md">
-        <Card.Header class="flex flex-row items-center justify-between space-y-0 pb-2">
-          <Card.Title class="text-xl font-medium italic">SUB-15</Card.Title>
-          <div class="text-2xl text-muted-foreground"><span class="text-sm">Nascidos  em </span>{playersData.sub15date}</div>
-        </Card.Header>
-        <Card.Content>
-          <div class="text-2xl font-bold">{playersData.sub15}</div>
-        </Card.Content>
-      </Card.Root>
-    {/if}
-  </div>
+  {#if playersData.sub20}
+  <Card.Root class="bg-gradient-to-r border-b-orange-500 border-b-4 dark:bg-neutral-700 dark:border-orange-400 transform hover:scale-105 transition duration-300 shadow-sm">
+    <Card.Header class="flex flex-row items-center justify-between space-y-0 pb-2">
+      <Card.Title class="text-xl italic font-thin text-range-800 font-medium">SUB-20</Card.Title>
+      <!-- Display the date 20 years from now -->
+      <div class="text-2xl text-muted-foreground"><span class="text-sm">Nascidos  em </span>{playersData.sub20date}</div>
+    </Card.Header>
+    <Card.Content>
+      <!-- Display the player count -->
+      <div class="text-2xl font-bold">{playersData.sub20}</div>
+    </Card.Content>
+  </Card.Root>
+{/if}
+  {#if playersData.sub17}
+    <Card.Root class="bg-gradient-to-r border-b-orange-500 border-b-4 dark:bg-neutral-700 dark:border-orange-400 transform hover:scale-105 transition duration-300 shadow-md">
+      <Card.Header class="flex flex-row items-center justify-between space-y-0 pb-2">
+        <Card.Title class="text-xl font-thin italic font-medium">SUB-17</Card.Title>
+        <div class="text-2xl text-muted-foreground"><span class="text-sm">Nascidos  em </span>{playersData.sub17date}</div>
+      </Card.Header>
+      <Card.Content>
+        <div class="text-2xl font-bold">{playersData.sub17}</div>
+      </Card.Content>
+    </Card.Root>
+  {/if}
+  {#if playersData.sub15}
+    <Card.Root class="bg-gradient-to-r border-b-orange-500 border-b-4 dark:bg-neutral-700 dark:border-orange-400 transform hover:scale-105 transition duration-300 shadow-md">
+      <Card.Header class="flex flex-row items-center justify-between space-y-0 pb-2">
+        <Card.Title class="text-xl font-medium italic">SUB-15</Card.Title>
+        <div class="text-2xl text-muted-foreground"><span class="text-sm">Nascidos  em </span>{playersData.sub15date}</div>
+      </Card.Header>
+      <Card.Content>
+        <div class="text-2xl font-bold">{playersData.sub15}</div>
+      </Card.Content>
+    </Card.Root>
+  {/if}
+</div>
